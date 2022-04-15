@@ -1,0 +1,78 @@
+{
+  "index.html": {
+    "file": "assets/index.6e67c3f0.js",
+    "src": "index.html",
+    "isEntry": true,
+    "dynamicImports": [
+      "src/layouts/MainLayout.vue",
+      "src/pages/IndexPage.vue",
+      "src/pages/ErrorNotFound.vue",
+      "src/boot/i18n.js",
+      "src/boot/axios.js"
+    ],
+    "css": [
+      "assets/index.a7c85ea1.css"
+    ],
+    "assets": [
+      "assets/fa-brands-400.404c746c.woff2",
+      "assets/fa-brands-400.e523f49c.ttf",
+      "assets/fa-regular-400.6a274e76.woff2",
+      "assets/fa-regular-400.4e96a7e0.ttf",
+      "assets/fa-solid-900.d76fb4e8.woff2",
+      "assets/fa-solid-900.03f2986c.ttf",
+      "assets/fa-v4compatibility.0db31bef.woff2",
+      "assets/fa-v4compatibility.86a687cf.ttf",
+      "assets/KFOkCnqEu92Fr1MmgVxIIzQ.a38ad0b6.woff",
+      "assets/KFOlCnqEu92Fr1MmSU5fBBc-.855a0697.woff",
+      "assets/KFOmCnqEu92Fr1Mu4mxM.ea50ac7f.woff",
+      "assets/KFOlCnqEu92Fr1MmEU9fBBc-.bd811625.woff",
+      "assets/KFOlCnqEu92Fr1MmWUlfBBc-.a01a632e.woff",
+      "assets/KFOlCnqEu92Fr1MmYUtfBBc-.d33864e0.woff",
+      "assets/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.273150c4.woff2",
+      "assets/flUhRq6tzZclQEJ-Vdg-IuiaDsNa.450e40b0.woff"
+    ]
+  },
+  "src/boot/i18n.js": {
+    "file": "assets/i18n.4f8392ca.js",
+    "src": "src/boot/i18n.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html"
+    ]
+  },
+  "src/boot/axios.js": {
+    "file": "assets/axios.b8999562.js",
+    "src": "src/boot/axios.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html"
+    ]
+  },
+  "src/layouts/MainLayout.vue": {
+    "file": "assets/MainLayout.36931297.js",
+    "src": "src/layouts/MainLayout.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html"
+    ]
+  },
+  "src/pages/IndexPage.vue": {
+    "file": "assets/IndexPage.3cfe3f62.js",
+    "src": "src/pages/IndexPage.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html"
+    ],
+    "assets": [
+      "assets/quasar-logo-vertical.55e9c854.svg"
+    ]
+  },
+  "src/pages/ErrorNotFound.vue": {
+    "file": "assets/ErrorNotFound.31d6981b.js",
+    "src": "src/pages/ErrorNotFound.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html"
+    ]
+  }
+}
