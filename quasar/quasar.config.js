@@ -41,7 +41,8 @@ module.exports = configure(function (ctx) {
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#css
     css: [
-      'app.scss'
+      'app.scss',
+      '~@quasar/quasar-ui-qcalendar/src/css/calendar-day.sass'
     ],
 
     // https://github.com/quasarframework/quasar/tree/dev/extras
@@ -64,6 +65,10 @@ module.exports = configure(function (ctx) {
         browser: [ 'es2019', 'edge88', 'firefox78', 'chrome87', 'safari13.1' ],
         node: 'node16'
       },
+      transpile: true,
+      transpileDependencies: [
+        /quasar-ui-qcalendar[\\/]src/
+      ],
 
       vueRouterMode: 'history', // available values: 'hash', 'history'
       // vueRouterBase,
@@ -105,7 +110,7 @@ module.exports = configure(function (ctx) {
     // Full list of options: https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#devServer
     devServer: {
       // https: true
-      // host: dotEnv.APP_URL.split('//')[1],
+      host: dotEnv.APP_URL.split('//')[1],
       open: true // opens browser window automatically
     },
 
