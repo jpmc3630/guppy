@@ -33,7 +33,7 @@ class AppServiceProvider extends ServiceProvider
             // $imports = $manifiest->{'index.html'}->{'imports'};
             $css = $manifiest->{'index.html'}->{'css'};
             // index.js
-            $out = '<script type="module" crossorigin src="/'.$module.'"></script>\n';
+            $out = '<script type="module" crossorigin src="/'.$module.'"></script>';
             // vendor.js
             // foreach ($imports as $import) {
             //     $out .= '<link rel="modulepreload" href="/'.$manifiest->{$import}->{'file'}.'" />\n';
