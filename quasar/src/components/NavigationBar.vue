@@ -25,6 +25,30 @@
       >
         Next &gt;
       </q-btn>
+      <q-btn
+        no-caps
+        class="button"
+        style="margin: 2px;"
+        @click="$emit('viewDay')"
+      >
+        Day
+      </q-btn>
+      <q-btn
+        no-caps
+        class="button"
+        style="margin: 2px;"
+        @click="$emit('viewWeek')"
+      >
+        Week
+      </q-btn>
+      <q-btn
+        no-caps
+        class="button"
+        style="margin: 2px;"
+        @click="$emit('viewMonth')"
+      >
+        Month
+      </q-btn>
     </div>
   </div>
 </template>

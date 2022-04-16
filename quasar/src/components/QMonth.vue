@@ -65,7 +65,8 @@ export default defineComponent({
       console.log('onChange', data)
     },
     onClickDate (data) {
-      console.log('onClickDate', data)
+      console.log('onClickDatereerr', data)
+      this.$emit('setToday', data.scope.timestamp)
     },
     onClickDay (data) {
       console.log('onClickDay', data)
