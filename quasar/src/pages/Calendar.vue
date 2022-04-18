@@ -102,7 +102,7 @@
                   <q-icon name="event" class="cursor-pointer">
                     <q-popup-proxy v-model="showDateScrollerAllDay">
 
-                      <q-scroller
+                      <!-- <q-scroller
                         v-model="eventForm.dateTimeStart"
                         view="date"
                         :locale="locale"
@@ -116,8 +116,8 @@
                         inner-color="white"
                         :style="scrollerPopupStyle160"
                         @close="() => { showDateScrollerAllDay = false }"
-                      />
-
+                      /> -->
+                      q-scroller was ere
                     </q-popup-proxy>
                   </q-icon>
                 </template>
@@ -137,7 +137,7 @@
                     <q-icon name="event" class="cursor-pointer">
                       <q-popup-proxy v-model="showDateTimeScrollerStart">
 
-                        <q-scroller
+                        <!-- <q-scroller
                           v-model="eventForm.dateTimeStart"
                           view="date-time"
                           :locale="locale"
@@ -151,8 +151,8 @@
                           inner-text-color="primary "
                           :style="scrollerPopupStyle280"
                           @close="() => { showDateTimeScrollerStart = false }"
-                        />
-
+                        /> -->
+                        q-scroller was ere
                       </q-popup-proxy>
                     </q-icon>
                   </template>
@@ -171,7 +171,7 @@
                     <q-icon name="event" class="cursor-pointer">
                       <q-popup-proxy v-model="showDateTimeScrollerEnd">
 
-                        <q-scroller
+                        <!-- <q-scroller
                           v-model="eventForm.dateTimeEnd"
                           view="date-time"
                           :locale="locale"
@@ -185,8 +185,8 @@
                           inner-text-color="primary "
                           :style="scrollerPopupStyle280"
                           @close="() => { showDateTimeScrollerEnd = false }"
-                        />
-
+                        /> -->
+                        q-scroller was ere
                       </q-popup-proxy>
                     </q-icon>
                   </template>
@@ -209,7 +209,7 @@
                         :filter="eventForm.icon"
                         icon-set="fontawesome-v5"
                         tooltips
-                        :pagination.sync="pagination"
+                        v-model:pagination="pagination"
                         style="height: 300px; width: 300px; background-color: white;"
                       />
 
@@ -297,7 +297,6 @@
         <template #day="{ timestamp }">
           <template v-if="calendarView.indexOf('agenda') < 0">
             <template v-for="(event, index) in getEvents(timestamp.date)" :key="index">
-                <!-- was on q-badge below...  :key="index" -->
               <q-badge
                 style="width: 100%; cursor: pointer; height: 14px; max-height: 14px"
                 :class="badgeClasses(event, 'day')"
@@ -607,6 +606,7 @@ export default {
     this.$eventBus.on('calendar:prev', this.calendarPrev)
     this.$eventBus.on('calendar:today', this.calendarToday)
     this.events = events
+    console.log(this.events)
     this.updateFormatters()
   },
   beforeUnmount () {
@@ -778,6 +778,9 @@ export default {
       // console.log('onMoved:', moved)
     },
     getEvents (dt) {
+      console.log('getEvents runs ...')
+      console.log(dt)
+
       const currentDate = QCalendar.parseTimestamp(dt)
       const events = []
       for (let i = 0; i < this.events.length; ++i) {
