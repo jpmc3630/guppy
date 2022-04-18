@@ -221,18 +221,18 @@ export default {
   methods: {
     onPrev () {
       /* eslint-disable-next-line */
-      this.$eventBus.$emit('calendar:prev')
+      this.$eventBus.emit('calendar:prev')
     },
     onNext () {
       /* eslint-disable-next-line */
-      this.$eventBus.$emit('calendar:next')
+      this.$eventBus.emit('calendar:next')
     },
     onTitlebarResized (size) {
       this.titlebarHeight = size.height
     },
     setToday () {
       /* eslint-disable-next-line */
-      this.$eventBus.$emit('calendar:today', this.formatDate())
+      this.$eventBus.emit('calendar:today', this.formatDate())
     },
     formatDate (date) {
       const d = date !== undefined ? new Date(date) : new Date(),
