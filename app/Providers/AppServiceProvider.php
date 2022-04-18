@@ -24,7 +24,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-          // \Artisan::call('view:clear');
+          \Artisan::call('view:clear');
 
           Blade::directive('vite', function () {
                 

@@ -8,15 +8,15 @@
       @viewWeek="view = 'week'"
       @viewMonth="view = 'month'"
     />
-  {{ currentDay }}
     <div class="row justify-center">
       <div style="display: flex; max-width: 800px; width: 100%; height: 400px;">
         <q-calendar-day
-          ref="calendar"
+          ref="calendar2"
           v-model="selectedDate"
-          view="week"
-          :interval-minutes="15"
+          :view="view"
+          :interval-minutes="60"
           :interval-count="96"
+          :interval-height="20"
           animated
           bordered
           @change="onChange"
@@ -33,16 +33,16 @@
 </template>
 
 <script>
-import { QCalendarDay, today } from '@quasar/quasar-ui-qcalendar/src/index.js'
+import { QCalendarDay, today } from '@quasar/quasar-ui-qcalendar/dist/QCalendarDay.esm.js'
 import '@quasar/quasar-ui-qcalendar/src/QCalendarVariables.sass'
 import '@quasar/quasar-ui-qcalendar/src/QCalendarTransitions.sass'
 import '@quasar/quasar-ui-qcalendar/src/QCalendarDay.sass'
 
 import { defineComponent } from 'vue'
-import NavigationBar from '../components/NavigationBar.vue'
+import NavigationBar from './NavigationBar.vue'
 
 export default defineComponent({
-  name: 'WeekIntervalMinutes15',
+  name: 'CalendarDay',
   props: ['currentDay'],
   components: {
     NavigationBar,
@@ -50,18 +50,19 @@ export default defineComponent({
   },
   data () {
     return {
-      selectedDate: this.currentDay
+      selectedDate: this.currentDay,
+      view: 'day'
     }
   },
   methods: {
     onToday () {
-      this.$refs.calendar.moveToToday()
+      this.$refs.calendar2.moveToToday()
     },
     onPrev () {
-      this.$refs.calendar.prev()
+      this.$refs.calendar2.prev()
     },
     onNext () {
-      this.$refs.calendar.next()
+      this.$refs.calendar2.next()
     },
 
     onMoved (data) {
@@ -86,8 +87,14 @@ export default defineComponent({
       console.log('onClickHeadDay', data)
     }
   },
-  onMounted () {
-    console.log('CURRENsT asdDAY: ', this.currentDay)
+  watch: {
+    currentDay: {
+      immediate: true,
+      handler (newVal) {
+        this.selectedDate = newVal
+      }
+    }
   }
+
 })
 </script>
